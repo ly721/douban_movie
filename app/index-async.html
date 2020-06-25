@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>异步加载库</title>
+		<!-- <script src="bower_components/script.js/dist/script.js"></script> -->
+		<script src="bower_components/load.js/load.min.js"></script>
+		<script src="bower_components/angular-loader/angular-loader.js"></script>
+	</head>
+	<body>
+		<script>
+			 console.log(jQuery+"start...")
+			loadJs(['./bower_components/jquery/dist/jquery.js',
+			'./bower_components/angular/angular.js',
+			"./bower_components/angular-route/angular-route.js",
+			'./app.js',
+			'./components/http.js'],function(){
+				console.log(jQuery+"in...")
+			})
+			 console.log(jQuery+"end...")
+			 
+			 //angular-loader可以按照依赖模块顺序加载，不知道这里为啥没实现
+		</script>
+	</body>
+</html>

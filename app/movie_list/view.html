@@ -1,0 +1,41 @@
+<h1>{{title}}</h1>
+<div class="list-group">
+	<p ng-if='message'>{{message}}</p>
+  <a href="#!/subject/{{item.id}}" ng-repeat="item in subjects" class="list-group-item">
+	  <span class="badge">{{item.rating.average}}</span>
+	  <div class="media">
+	    <div class="media-left">
+			<!-- <span class="glyphicon glyphicon-blackboard"></span> -->
+	    <img class="media-object" alt="{{item.title}}" ng-src="{{item.images.small}}" style="width:120px;height:160px;"> 
+	    </div>
+	    <div class="media-body">
+	      <h4 class="media-heading">{{item.title}}</h4>
+		  <p>类型：{{item.genres.join('、')}} <span>上映年份：{{item.year}}</span></p>
+	      <p>
+			  导演：
+			  <span ng-repeat="p in item.directors">{{p.name}}{{$last?'':'、'}}</span>
+		  </p>
+		  <p>
+			  主演：
+			  <span ng-repeat="c in item.casts">{{c.name}}{{$last?'':'、'}}</span>
+		  </p>
+	    </div>
+	  </div>
+  </a>
+</div>
+<p ng-show="!loading">总共：{{total}}条记录,第{{currentPage}}/{{totalPages}}页</p>
+
+
+  <ul class="pager" ng-show="!loading">
+    <li ng-class="{disabled:currentPage<=1}"><button ng-click="go(currentPage-1)" >Previous</button></li>
+    <li ng-class="{disabled:currentPage>=totalPages}"><button ng-click="go(currentPage+1)" >Next</button></li>
+  </ul>
+
+
+  <div class="mask" ng-show="loading">
+  	<div class="spinner">
+  	  <div class="cube1"></div>
+  	  <div class="cube2"></div>
+  	</div>
+  </div>
+

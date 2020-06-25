@@ -1,0 +1,35 @@
+{
+  "name": "angular-boilerplate",
+  "version": "1.0.0",
+  "description": "iceStone angular boilerplate",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "hs -a localhost -p 9000 -o"
+  },
+  "keywords": [
+    "iceStone",
+    "Micua",
+    "Angular",
+    "Boilerplate"
+  ],
+  "author": "iceStone <ice@wedn.net> (http://wedn.net/)",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "git": "^0.1.5",
+    "jquery": "^2.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zce/angular-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zce/angular-boilerplate/issues"
+  },
+  "homepage": "https://github.com/zce/angular-boilerplate#readme"
+}

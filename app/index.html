@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="movies">
+	<head>
+		<meta charset="utf-8">
+		<!-- 获取豆瓣电影图片403可加上下面代码即可显示 -->
+		<meta name="referrer" content="never">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>豆瓣电影</title>
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="app.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					 aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">豆瓣电影</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Dashboard</a></li>
+					</ul>
+					<form  ng-controller="searchCtrl" ng-submit="search()" class="navbar-form navbar-right">
+						<input type="text" ng-model="input" class="form-control" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="content">
+
+
+			<!-- <ul class="sidebar" ng-controller="navCtrl">
+          <li><a href="#!/in_theaters/1" ng-class="{active:current=='in_theaters'}">正在热映</a></li>
+          <li><a href="#!/coming_soon/1" ng-class="{active:current=='coming_soon'}">即将上映</a></li>
+          <li><a href="#!/top250/1" ng-class="{active:current=='top250'}">TOP250</a></li>
+        </ul> -->
+
+			<ul class="sidebar clearfix">
+				<li><a auto-focus href="#!/in_theaters/1">正在热映</a></li>
+				<li><a auto-focus href="#!/coming_soon/1">即将上映</a></li>
+				<li><a auto-focus href="#!/top250/1">TOP250</a></li>
+			</ul>
+
+			<div class="main" ng-view>
+				<!-- todo -->
+			</div>
+		</div>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+
+		<!-- 主模块 -->
+		<script src="app.js"></script>
+		<script src="components/http.js"></script>
+		<script src="components/auto-focus.js"></script>
+		<!-- 子模块 -->
+		<script src="movie_list/app.js"></script>
+		<script src="movie_detail/app.js"></script>
+	</body>
+</html>

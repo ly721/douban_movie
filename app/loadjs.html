@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>load js</title>
+	</head>
+	<body>
+		<script>
+			function $script(loads,callback){
+					var scriptEle = document.createElement('script')
+					scriptEle.src = loads
+					document.head.appendChild(scriptEle)
+			
+				scriptEle.addEventListener('load',callback)
+			}
+			
+			$script('./bower_components/angular/angular.js',function(){
+				console.log('load end')
+			})
+		</script>
+	</body>
+</html>

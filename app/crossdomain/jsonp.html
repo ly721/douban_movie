@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jsonp实现豆瓣获取</title>
+	</head>
+	<body>
+		<div id="result"></div>
+		<script src="http.js"></script>
+		<script>
+			(function(){
+				
+				$jsonp(
+				'http://api.douban.com/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a',
+				{count:2},
+				function(data){
+					document.getElementById('result').innerHTML = JSON.stringify(data)
+				}
+				)
+				
+			})()
+			
+		</script>
+	</body>
+</html>
