@@ -16,7 +16,7 @@
   "author": "iceStone <ice@wedn.net> (http://wedn.net/)",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "git": "^0.1.5",
     "jquery": "^2.2.0"
   },
