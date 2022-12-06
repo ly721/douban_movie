@@ -21,7 +21,7 @@
     "jquery": "^2.2.0"
   },
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^14.1.1"
   },
   "main": "index.js",
   "repository": {
